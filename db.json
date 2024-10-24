@@ -1,48 +1,13 @@
 {
   "users": [
     {
-      "id": "fcc1",
-      "firstname": "cvbnm",
-      "lastname": "vbn",
-      "email": "nifras@gmail.com",
+      "id": "6816",
+      "firstname": "nifras",
+      "lastname": "vp",
+      "email": "mohamadnifras@gmail.com",
       "password": "12345678",
       "cart": [],
-      "orders": [
-        {
-          "name": "Mohamad Nifras v p",
-          "address": "123VALIYAPEEDITEKKAL",
-          "email": "nifras@gmail.com",
-          "phone": "6238896686",
-          "cartItems": [
-            {
-              "id": "2",
-              "name": "casua Shoe",
-              "category": "men",
-              "image": "https://www.superkicks.in/cdn/shop/files/6_850343c4-985f-4377-a4cb-fedb7ba8b703.jpg?v=1725345832&width=600",
-              "brand": "Adidas",
-              "price": 2499,
-              "offer": "20%",
-              "size": 10,
-              "stock": 50,
-              "quantity": 1
-            },
-            {
-              "id": "1",
-              "name": "casua Shoe",
-              "category": "men",
-              "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/p/i/-original-imah4sxtbwfftpfd.jpeg?q=70",
-              "brand": "Nike",
-              "price": 1999,
-              "offer": "30%",
-              "size": 9,
-              "stock": 100,
-              "quantity": 1
-            }
-          ],
-          "total": 4722.9,
-          "date": "10/23/2024, 9:16:06 PM"
-        }
-      ]
+      "orders": []
     }
   ],
   "products": [

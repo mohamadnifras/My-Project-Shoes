@@ -18,10 +18,13 @@ function Login() {
     const handleSubmit = async (values) =>{
         try{
             const {email, password}=values
-            const id = await loginResgister(email, password);
-            if(id){
+            const data = await loginResgister(email, password);
+            
+            if(data){
+              const username=data.firstname
+              const id=data.id
                 localStorage.setItem('id', id);
-               
+               localStorage.setItem("name",username)
                 localStorage.setItem('email', email);
                 navigate('/');
             }else{

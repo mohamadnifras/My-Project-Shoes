@@ -22,13 +22,16 @@ function ProductContext({children}) {
 
 useEffect(() => {
     const fetchCart = async () => {
+      if(localStorage.getItem("id")){
       try {
         const id = localStorage.getItem("id");
         const response = await axios.get(`http://localhost:5000/users/${id}`);
+
         setCart(response.data.cart);
       } catch (error) {
         console.log("Error fetching cart data:", error.message);
       }
+    }
     };
 
     fetchCart();
@@ -78,6 +81,7 @@ useEffect(() => {
 
   useEffect(()=>{
     const fecthOrders= async () =>{
+      if(localStorage.getItem("id")){
       try{
        const id = localStorage.getItem("id");
        const respons = await axios.get(`http://localhost:5000/users/${id}`);
@@ -87,6 +91,7 @@ useEffect(() => {
        console.error(error.message);
       }
     }
+  }
     fecthOrders();
   },[])
   return (
