@@ -75,7 +75,7 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
           content: {
             width: "600px",
             height: "auto",
-            maxHeight: "80vh",
+            // maxHeight: "80vh",
             overflowY: "auto",
           },
         }}
@@ -122,35 +122,6 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
             placeholder="000 000 0000"
           />
         </div>
-
-        {/* <div className="mb-4">
-          <label className="block mb-2 font-bold">Credit Card</label>
-          <div className="flex items-center space-x-2">
-            <div className="flex-1 relative">
-              <input
-                type="text"
-                className="w-full p-2 border rounded-md pl-10"
-                placeholder="1234 1234 1234 1234"
-              />
-            </div>
-
-            <div className="w-1/4">
-              <input
-                type="text"
-                className="w-full p-2 border rounded-md"
-                placeholder="MM/YY"
-              />
-            </div>
-
-            <div className="w-1/4">
-              <input
-                type="text"
-                className="w-full p-2 border rounded-md"
-                placeholder="CVC"
-              />
-            </div>
-          </div>
-        </div> */}
 
         <div className="mb-4">
           <h3 className="font-bold mb-2">Order Summary:</h3>

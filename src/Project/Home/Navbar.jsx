@@ -8,12 +8,14 @@ import { faCircleUser } from "@fortawesome/free-solid-svg-icons/faCircleUser";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { passContext } from "../RegisterAnsLogin/RegisterContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  const { cartCount, setSearch } = useContext(productContext);
+  const { setSearch, cart, setCart } = useContext(productContext);
   const [anchorEl, setAnchorEl] = useState(null);
-  const {user, setUser} = useContext(passContext);
+  const {user,logout} = useContext(passContext);
   const navigate = useNavigate();
+  
 
   
   const handleSearchChange = (e) => {
@@ -33,14 +35,12 @@ function Navbar() {
 
 
   const handleLogout=()=>{
-    localStorage.removeItem("id")
-    localStorage.removeItem("name")
-    localStorage.removeItem("email")
-    setUser(null)
-    navigate("/login");
-    localStorage.clear();
-
+   logout()
+    setCart([])
+    handleClose()
   }
+
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center py-2 md:py-3 px-4 md:px-6">
@@ -107,9 +107,9 @@ function Navbar() {
               icon={faCartShopping}
               className="text-2xl md:text-3xl text-white"
             />
-            {cartCount > 0 && (
+            {cart.length > 0 && (
               <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full px-1 text-xs">
-                {cartCount}
+                {cart.length}
               </span>
             )}
             <span className="text-white text-sm">Cart</span>
@@ -125,7 +125,9 @@ function Navbar() {
               icon={faCircleUser}
               className="text-2xl md:text-3xl text-white"
             />
-            <span className="text-white text-sm">{user?.firstname || "Login"}</span>
+            <span className="text-white text-sm">{user? (user.firstname): ("Login")}</span>
+          
+            
           </Button>
           <Menu
             id="user-menu"
@@ -144,7 +146,9 @@ function Navbar() {
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
             {user ?
-            (<MenuItem onClick={handleLogout}>Logout</MenuItem>): (<MenuItem onClick={()=>navigate("/login")}>Login</MenuItem>)}
+            (<MenuItem onClick={handleLogout}>Logout</MenuItem>)
+            : 
+            (<MenuItem onClick={()=>navigate("/login")}>Login</MenuItem>)}
           </Menu>
         </div>
       </div>

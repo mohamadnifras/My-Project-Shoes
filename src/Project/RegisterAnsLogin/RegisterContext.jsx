@@ -60,10 +60,20 @@ function RegisterContext({ children }) {
       return null;
     }
   };
+  const logout=()=>{
+    ["id", "name", "email"].forEach(key => localStorage.removeItem(key));
+    // navigate("/login");
+    
+    setUser(null);
+    
+   
+    
+    
+  }
 
   return (
     <passContext.Provider
-      value={{ userRegister, addRegiter, loginResgister, user }}
+      value={{ userRegister, addRegiter, loginResgister, user ,logout}}
     >
       {children}
     </passContext.Provider>

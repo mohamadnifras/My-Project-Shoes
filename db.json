@@ -6,7 +6,54 @@
       "lastname": "vp",
       "email": "mohamadnifras@gmail.com",
       "password": "12345678",
-      "cart": [],
+      "cart": [
+        {
+          "id": "3",
+          "name": "casua Shoe",
+          "category": "men",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/5/f/s/-original-imah46kbesfekgu6.jpeg?q=70",
+          "brand": "Nike",
+          "price": 2999,
+          "offer": "25%",
+          "size": 11,
+          "stock": 75,
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "name": "casua Shoe",
+          "category": "men",
+          "image": "https://www.superkicks.in/cdn/shop/files/1_1_1.jpg?v=1729157034&width=600",
+          "brand": "Puma",
+          "price": 2699,
+          "offer": "15%",
+          "size": 10,
+          "stock": 60,
+          "quantity": 1
+        }
+      ],
+      "orders": []
+    },
+    {
+      "id": "87c3",
+      "firstname": "Hisham",
+      "lastname": "C",
+      "email": "hisham@gmail.com",
+      "password": "121212",
+      "cart": [
+        {
+          "id": "2",
+          "name": "casua Shoe",
+          "category": "men",
+          "image": "https://www.superkicks.in/cdn/shop/files/6_850343c4-985f-4377-a4cb-fedb7ba8b703.jpg?v=1725345832&width=600",
+          "brand": "Adidas",
+          "price": 2499,
+          "offer": "20%",
+          "size": 10,
+          "stock": 50,
+          "quantity": 1
+        }
+      ],
       "orders": []
     }
   ],

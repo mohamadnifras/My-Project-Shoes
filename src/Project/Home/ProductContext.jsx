@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { createContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { passContext } from '../RegisterAnsLogin/RegisterContext'
 
 export const productContext = createContext()
 function ProductContext({children}) {
@@ -7,6 +9,7 @@ function ProductContext({children}) {
     const [cart, setCart] = useState([]);
     const [orders,setOrders]=useState([])
     const [search,setSearch]=useState('')
+    const {user}=useContext(passContext)
     useEffect(()=>{
         const fecthProduct = async () =>{
         try{
@@ -20,13 +23,13 @@ function ProductContext({children}) {
 },[])
 
 
+
 useEffect(() => {
     const fetchCart = async () => {
       if(localStorage.getItem("id")){
       try {
         const id = localStorage.getItem("id");
         const response = await axios.get(`http://localhost:5000/users/${id}`);
-
         setCart(response.data.cart);
       } catch (error) {
         console.log("Error fetching cart data:", error.message);
@@ -35,7 +38,7 @@ useEffect(() => {
     };
 
     fetchCart();
-  }, []);
+  }, [user]);
 
   const addCart = async (items) => {
     try {
@@ -77,7 +80,6 @@ useEffect(() => {
       console.log(error.message);
     }
   };
-  const cartCount = cart.length;
 
   useEffect(()=>{
     const fecthOrders= async () =>{
@@ -94,8 +96,11 @@ useEffect(() => {
   }
     fecthOrders();
   },[])
+
+
+
   return (
-   <productContext.Provider value={{product, addCart, cart, removeCart, cartCount, setCart, orders, search, setSearch}}>
+   <productContext.Provider value={{product, addCart, cart, removeCart, setCart, orders, search, setSearch}}>
       {children}
    </productContext.Provider>
   )

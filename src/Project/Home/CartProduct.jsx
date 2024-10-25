@@ -8,6 +8,26 @@ function CartProduct() {
   const taxRate = 0.05;
   const tax = subTotal * taxRate;
   const total = subTotal + tax;
+  const incrementQuantity = (id) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    setCart(updatedCart);
+  };
+
+  // Decrement quantity function
+  const decrementQuantity = (id) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id && item.quantity > 1) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    });
+    setCart(updatedCart);
+  };
   return (
     <div>
       {cart.length == 0 ? (
@@ -35,10 +55,26 @@ function CartProduct() {
                     />
                   </td>
                   <td className="border px-4 py-2">${item.price.toFixed(2)}</td>
-                  <td className="border px-4 py-2">{item.quantity}</td>
-                  <td className="border px-4 py-2">
-                    ${(item.price * item.quantity).toFixed(2)}
-                  </td>
+                  <td className="border px-4 py-2 flex justify-center items-center">
+            <button
+              onClick={() => decrementQuantity(item.id)}
+              className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700 transition mr-2"
+            >
+              -
+            </button>
+            {item.quantity}
+            <button
+              onClick={() => incrementQuantity(item.id)}
+              className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700 transition ml-2"
+            >
+              +
+            </button>
+          </td>
+          <td className="border px-4 py-2">
+            ${(item.price * item.quantity).toFixed(2)}
+          </td>
+
+             
                   <td className="border px-4 py-2">
                     <button
                       onClick={() => removeCart(item.id)}
