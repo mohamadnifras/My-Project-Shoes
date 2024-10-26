@@ -10,13 +10,15 @@ import Login from './Project/RegisterAnsLogin/Login'
 import ProductContext from './Project/Home/ProductContext'
 import CartProduct from './Project/Home/CartProduct';
 import OrdersList from './Project/Home/OrdersList';
+import AdminPage from './Project/AdminComponent/AdminPage';
+import AdminContext from './Project/AdminComponent/AdminContext';
 
 function App() {
 
 
   return (
     <>
-      
+      <AdminContext>
       <RegisterContext>
         <ProductContext>
        <BrowserRouter>
@@ -26,10 +28,14 @@ function App() {
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/cartproduct' element={<CartProduct/>}></Route>
           <Route path='/orderlist' element={<OrdersList/>}></Route>
+          <Route path='/admin' element={<AdminPage/>}>
+           <Route></Route>
+          </Route>
         </Routes>
         </BrowserRouter>
         </ProductContext>
       </RegisterContext>
+      </AdminContext>
       
     </>
   )

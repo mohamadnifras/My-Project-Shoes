@@ -92,10 +92,12 @@ useEffect(() => {
       }catch(error){
        console.error(error.message);
       }
+    }else{
+      setOrders([])
     }
   }
     fecthOrders();
-  },[])
+  },[user])
 
 
 

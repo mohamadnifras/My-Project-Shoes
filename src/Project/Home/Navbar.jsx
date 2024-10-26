@@ -13,15 +13,13 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const { setSearch, cart, setCart } = useContext(productContext);
   const [anchorEl, setAnchorEl] = useState(null);
-  const {user,logout} = useContext(passContext);
+  const { user, logout } = useContext(passContext);
   const navigate = useNavigate();
-  
 
-  
   const handleSearchChange = (e) => {
     setSearch(e.target.value.toLowerCase());
   };
-  
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -32,14 +30,11 @@ function Navbar() {
 
   const open = Boolean(anchorEl);
 
-
-
-  const handleLogout=()=>{
-   logout()
-    setCart([])
-    handleClose()
-  }
-
+  const handleLogout = () => {
+    logout();
+    setCart([]);
+    handleClose();
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
@@ -70,40 +65,45 @@ function Navbar() {
       <div className="container mx-auto flex justify-between items-center bg-[#0f172a] p-2 md:p-3">
         <ul className="flex-1 flex justify-center space-x-4 md:space-x-8">
           <li>
-            <a
-              href=""
+            <Link
+              to=""
               className="text-white hover:text-blue-200 text-center font-serif"
             >
               Mens
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="text-white hover:text-blue-200 font-serif">
-              Womens
-            </a>
+            <Link
+              to=""
+              className="text-white hover:text-blue-200 text-center font-serif"
+            >
+              Women
+            </Link>
           </li>
           <li>
-            <a href="" className="text-white hover:text-blue-200 font-serif">
+            <Link
+              to=""
+              className="text-white hover:text-blue-200 text-center font-serif"
+            >
               Kids
-            </a>
+            </Link>
           </li>
         </ul>
 
-
         <div className="flex space-x-4">
-          <a href="/orderlist" className="flex flex-col items-center">
-            <FontAwesomeIcon
+         
+
+         <Link to='/orderlist' className="flex flex-col items-center">
+         <FontAwesomeIcon
               icon={faRectangleList}
               className="text-white text-2xl md:text-3xl"
             />
             <span className="text-white text-sm">Order List</span>
-          </a>
+         </Link>
 
-          <a
-            href="/cartproduct"
-            className="flex flex-col items-center relative"
-          >
-            <FontAwesomeIcon
+
+        <Link to='/cartproduct' className="flex flex-col items-center relative">
+        <FontAwesomeIcon
               icon={faCartShopping}
               className="text-2xl md:text-3xl text-white"
             />
@@ -113,7 +113,7 @@ function Navbar() {
               </span>
             )}
             <span className="text-white text-sm">Cart</span>
-          </a>
+        </Link>
 
           <Button
             aria-controls={open ? "user-menu" : undefined}
@@ -125,9 +125,9 @@ function Navbar() {
               icon={faCircleUser}
               className="text-2xl md:text-3xl text-white"
             />
-            <span className="text-white text-sm">{user? (user.firstname): ("Login")}</span>
-          
-            
+            <span className="text-white text-sm">
+              {user ? user.firstname : "Login"}
+            </span>
           </Button>
           <Menu
             id="user-menu"
@@ -145,10 +145,11 @@ function Navbar() {
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
-            {user ?
-            (<MenuItem onClick={handleLogout}>Logout</MenuItem>)
-            : 
-            (<MenuItem onClick={()=>navigate("/login")}>Login</MenuItem>)}
+            {user ? (
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+            ) : (
+              <MenuItem onClick={() => navigate("/login")}>Login</MenuItem>
+            )}
           </Menu>
         </div>
       </div>

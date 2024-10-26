@@ -6,33 +6,43 @@
       "lastname": "vp",
       "email": "mohamadnifras@gmail.com",
       "password": "12345678",
-      "cart": [
+      "cart": [],
+      "orders": [
         {
-          "id": "3",
-          "name": "casua Shoe",
-          "category": "men",
-          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/5/f/s/-original-imah46kbesfekgu6.jpeg?q=70",
-          "brand": "Nike",
-          "price": 2999,
-          "offer": "25%",
-          "size": 11,
-          "stock": 75,
-          "quantity": 1
-        },
-        {
-          "id": "4",
-          "name": "casua Shoe",
-          "category": "men",
-          "image": "https://www.superkicks.in/cdn/shop/files/1_1_1.jpg?v=1729157034&width=600",
-          "brand": "Puma",
-          "price": 2699,
-          "offer": "15%",
-          "size": 10,
-          "stock": 60,
-          "quantity": 1
+          "name": "Mohamad Nifras v p",
+          "address": "123 VALIYAPEEDIYEKKAL",
+          "email": "mohamadnifras@gmail.com",
+          "phone": "6238896686",
+          "cartItems": [
+            {
+              "id": "3",
+              "name": "casua Shoe",
+              "category": "men",
+              "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/5/f/s/-original-imah46kbesfekgu6.jpeg?q=70",
+              "brand": "Nike",
+              "price": 2999,
+              "offer": "25%",
+              "size": 11,
+              "stock": 75,
+              "quantity": 1
+            },
+            {
+              "id": "4",
+              "name": "casua Shoe",
+              "category": "men",
+              "image": "https://www.superkicks.in/cdn/shop/files/1_1_1.jpg?v=1729157034&width=600",
+              "brand": "Puma",
+              "price": 2699,
+              "offer": "15%",
+              "size": 10,
+              "stock": 60,
+              "quantity": 1
+            }
+          ],
+          "total": 5982.9,
+          "date": "10/26/2024, 12:02:01 PM"
         }
-      ],
-      "orders": []
+      ]
     },
     {
       "id": "87c3",

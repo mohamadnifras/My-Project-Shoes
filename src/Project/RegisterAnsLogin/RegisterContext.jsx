@@ -62,7 +62,6 @@ function RegisterContext({ children }) {
   };
   const logout=()=>{
     ["id", "name", "email"].forEach(key => localStorage.removeItem(key));
-    // navigate("/login");
     
     setUser(null);
     
