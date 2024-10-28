@@ -12,6 +12,8 @@ import CartProduct from './Project/Home/CartProduct';
 import OrdersList from './Project/Home/OrdersList';
 import AdminPage from './Project/AdminComponent/AdminPage';
 import AdminContext from './Project/AdminComponent/AdminContext';
+import AdminProduct from './Project/AdminComponent/AdminProduct';
+import AdminUsers from './Project/AdminComponent/AdminUsers';
 
 function App() {
 
@@ -29,7 +31,8 @@ function App() {
           <Route path='/cartproduct' element={<CartProduct/>}></Route>
           <Route path='/orderlist' element={<OrdersList/>}></Route>
           <Route path='/admin' element={<AdminPage/>}>
-           <Route></Route>
+           <Route path='adminproduct' element={<AdminProduct/>}></Route>
+           <Route path='adminuser' element={<AdminUsers/>}></Route>
           </Route>
         </Routes>
         </BrowserRouter>
