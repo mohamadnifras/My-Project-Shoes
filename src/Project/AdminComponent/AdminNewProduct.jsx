@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Modal from "react-modal";
 import { adminContext } from "./AdminContext";
 
-function AdminNewProduct({isOpen,onRequestClose}) {
+function AdminNewProduct({isOpen, onRequestClose}) {
     const {addAdminProduct} = useContext(adminContext);
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -21,19 +21,23 @@ function AdminNewProduct({isOpen,onRequestClose}) {
       [name]: value,
     }));
   };
-  const handleSubmit = (values)=>{
-  const ProductData = {
-    name: values.name,
-    category: values.category,
-    image: values.image,
-    brand: values.brand,
-    price: values.price,
-    offer: values.offer,
-    size: values.size,
-    stock: values.stock,
+  
+  const handleSubmit = async ()=>{
+    const isFormComplete = Object.values(newProduct).every((value) => value.trim() !== "");
+    if (!isFormComplete) {
+      alert("Please fill out all fields before submitting.");
+      return;
+    }
+  try{
+    await addAdminProduct(newProduct)
+    alert("Product added successfully!");
+    onRequestClose();  
+  }catch(error){
+    console.error("Error saving product:", error.message);
+  
   }
-   addAdminProduct(ProductData)
   }
+   
   return (
     <div>
       <Modal
@@ -50,6 +54,7 @@ function AdminNewProduct({isOpen,onRequestClose}) {
             },
           }}
       >
+
         <h2 className="text-xl font-bold mb-4">New Add Product</h2>
 
         <label className="block mb-1">Name:</label>

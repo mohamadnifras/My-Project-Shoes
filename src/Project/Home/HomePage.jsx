@@ -62,14 +62,14 @@ function HomePage() {
           </div>
         ))}
       </div>
-
+{/* image click */}
       <Modal isOpen={!!selectedProduct} onRequestClose={closeModal} className=" mx-auto p-6 border rounded-lg shadow-lg bg-white"
         style={{
           content: {
             width: "400px",
             height: "auto",
             overflowY: "auto",
-            marginTop:"50px"
+            marginTop:"100px"
           },
         }}
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">

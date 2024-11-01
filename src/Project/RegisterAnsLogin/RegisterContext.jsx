@@ -63,11 +63,7 @@ function RegisterContext({ children }) {
   const logout=()=>{
     ["id", "name", "email"].forEach(key => localStorage.removeItem(key));
     
-    setUser(null);
-    
-   
-    
-    
+    setUser(null);  
   }
 
   return (

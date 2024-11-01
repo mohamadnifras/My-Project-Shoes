@@ -14,6 +14,7 @@ import AdminPage from './Project/AdminComponent/AdminPage';
 import AdminContext from './Project/AdminComponent/AdminContext';
 import AdminProduct from './Project/AdminComponent/AdminProduct';
 import AdminUsers from './Project/AdminComponent/AdminUsers';
+import AdminDashboard from './Project/AdminComponent/AdminDashboard';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path='/admin' element={<AdminPage/>}>
            <Route path='adminproduct' element={<AdminProduct/>}></Route>
            <Route path='adminuser' element={<AdminUsers/>}></Route>
+           <Route path='dashboard' element={<AdminDashboard/>}></Route>
           </Route>
         </Routes>
         </BrowserRouter>

@@ -4,6 +4,10 @@ import { faArrowRightFromBracket,faBox, faChartLine, faUser } from '@fortawesome
 import { useNavigate } from 'react-router-dom';
 function AdminNavbar() {
   const navigate = useNavigate()
+  const handleLogout = () =>{
+    ["id", "name", "email","password"].forEach(key => localStorage.removeItem(key));
+    navigate('/login')
+  }
   return (
     <>
      <div className="sticky top-0 bg-gray-900 h-screen p-4 text-white flex flex-col">
@@ -14,7 +18,7 @@ function AdminNavbar() {
       <nav className="flex flex-col gap-4">
         <button 
           className="flex items-center gap-2 bg-gray-300 bg-opacity-20 hover:bg-opacity-40 py-2 px-4 rounded transition duration-300" 
-          onClick={() => navigate('')} 
+          onClick={() => navigate('dashboard')} 
         >
           <FontAwesomeIcon icon={faChartLine} />
           Dashboard
@@ -35,7 +39,7 @@ function AdminNavbar() {
         </button>
         <button 
           className="flex items-center gap-2 bg-gray-300 bg-opacity-20 hover:bg-opacity-40 py-2 px-4 rounded transition duration-300 mt-auto" 
-          onClick={() => navigate('')} 
+          onClick={handleLogout} 
         >
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
           Logout

@@ -6,6 +6,7 @@
       "lastname": "vp",
       "email": "mohamadnifras@gmail.com",
       "password": "12345678",
+      "status": true,
       "cart": [],
       "orders": [
         {
@@ -50,6 +51,7 @@
       "lastname": "C",
       "email": "hisham@gmail.com",
       "password": "121212",
+      "status": true,
       "cart": [
         {
           "id": "2",
@@ -65,19 +67,36 @@
         }
       ],
       "orders": []
+    },
+    {
+      "id": "ea1c",
+      "firstname": "sinan",
+      "lastname": "up",
+      "email": "sinan@gmail.com",
+      "password": "12345678",
+      "status": false,
+      "cart": [],
+      "orders": []
+    }
+  ],
+  "admin":[
+    {
+      "id":"ni7",
+      "email":"adminnifras@gmail.com",
+      "password":"77770000"
     }
   ],
   "products": [
     {
       "id": "1",
-      "name": "casua Shoe",
+      "name": "casua Shoes",
       "category": "men",
       "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/p/i/-original-imah4sxtbwfftpfd.jpeg?q=70",
       "brand": "Nike",
-      "price": 1999,
+      "price": "1999",
       "offer": "30%",
       "size": 9,
-      "stock": 100
+      "stock": "40"
     },
     {
       "id": "2",
@@ -88,7 +107,7 @@
       "price": 2499,
       "offer": "20%",
       "size": 10,
-      "stock": 50
+      "stock": "40"
     },
     {
       "id": "3",
@@ -443,17 +462,6 @@
       "stock": 60
     },
     {
-      "id": "35",
-      "name": "Heels",
-      "category": "women",
-      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/d/e/y/-original-imah4qskjrfcdszv.jpeg?q=70",
-      "brand": "p",
-      "price": 2700,
-      "offer": "10%",
-      "size": 9,
-      "stock": 20
-    },
-    {
       "id": "36",
       "name": "Lifestyle Shoe",
       "category": "women",
@@ -496,17 +504,6 @@
       "offer": "25%",
       "size": 9,
       "stock": 25
-    },
-    {
-      "id": "40",
-      "name": "Sneakers",
-      "category": "women",
-      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/x/l/q/3-21001-chry-36-anita-burgundy-original-imah44dz3v7ttgmv.jpeg?q=70",
-      "brand": "Hush Puppies",
-      "price": 2500,
-      "offer": "20%",
-      "size": 8,
-      "stock": 50
     },
     {
       "id": "41",
@@ -639,6 +636,17 @@
       "offer": "25%",
       "size": 9,
       "stock": 55
+    },
+    {
+      "id": "baa3",
+      "name": "sneakers",
+      "category": "men",
+      "image": "https://neemans.com/cdn/shop/files/ND-TB-Grey-_WebOptimized_a_eb690643-6131-4b53-86da-c1b5c2b55803_800x.jpg?v=1724988614",
+      "brand": "Neeman's",
+      "price": "3000",
+      "offer": "30%",
+      "size": "9",
+      "stock": "20"
     }
   ]
 }

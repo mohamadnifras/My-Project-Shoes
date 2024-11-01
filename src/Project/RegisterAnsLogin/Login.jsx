@@ -18,17 +18,34 @@ function Login() {
     const handleSubmit = async (values) =>{
         try{
             const {email, password}=values
-            const data = await loginResgister(email, password);
+            const adminEmail = "adminnifras@gmail.com";
+            const adminPassword = "77770000";
             
-            if(data){
-              const username=data.firstname
-              const id=data.id
-                localStorage.setItem('id', id);
-               localStorage.setItem("name",username)
-                localStorage.setItem('email', email);
-                navigate('/');
+            //admin
+            if (email === adminEmail && password === adminPassword) {
+              
+              localStorage.setItem("id", "ni7");
+              localStorage.setItem("name", "Admin Nifras");
+              localStorage.setItem("email", adminEmail);
+              localStorage.setItem("password",  adminPassword );
+              navigate("/admin");
+              return;
+            } 
+            
+            const data = await loginResgister(email, password);
+//user
+            if(!data){
+              alert("Please Registration first.")
+            }else if(data.status){
+              data.status = true;  
+              const username = data.firstname;
+              const id = data.id;
+              localStorage.setItem('id', id);
+              localStorage.setItem("name", username);
+              localStorage.setItem('email', email);
+              navigate('/');
             }else{
-                alert("Please Registration");
+              alert("Your account is blocked.");
             }
         }catch(errors){
          console.error(errors);

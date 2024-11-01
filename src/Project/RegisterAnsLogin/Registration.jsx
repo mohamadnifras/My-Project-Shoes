@@ -22,6 +22,7 @@ function Registration() {
         lastname: values.lastname,
         email: values.email,
         password: values.password,
+        status:true,
         cart: [],
         orders: [],
       };
