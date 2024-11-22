@@ -81,52 +81,64 @@ function HomePage() {
 
 
 {/* image click */}
-      <Modal isOpen={!!selectedProduct} onRequestClose={closeModal} className="p-6 mx-auto bg-white border rounded-lg shadow-lg "
-        style={{
-          content: {
-            width: "400px",
-            height: "auto",
-            overflowY: "auto",
-            marginTop:"100px"
-          },
-        }}
-        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-  {selectedProduct && (
-    <div className="w-full max-w-xs p-4 mx-auto bg-white rounded-lg shadow-lg modal-content">
-      <img
-        src={selectedProduct.image}
-        alt={selectedProduct.brand}
-        className="object-cover w-full h-32 rounded-md"
-      />
-      <h2 className="mt-2 text-xl font-bold">{selectedProduct.brand}</h2>
-      <p>Category: {selectedProduct.category}</p>
-      <p>Stock: {selectedProduct.stock}</p>
-      <p>Size: {selectedProduct.size}</p>
-      <p className="text-lg font-semibold">Price: Rp {selectedProduct.price}.00</p>
-      <p className="text-sm text-gray-500">Offer: {selectedProduct.offer}</p>
-      
-      {/* Add to Cart Button */}
-      <div className="flex gap-2 mt-4">
-  <button
-    className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-600"
-    onClick={() => {
-      addCart(selectedProduct);
-    }}
-  >
-    Add to Cart
-  </button>
 
-  <button
-    className="px-4 py-2 font-bold text-gray-700 bg-gray-300 rounded hover:bg-gray-400"
-    onClick={closeModal}
-  >
-    Cancel
-  </button>
-</div>
+<Modal
+  isOpen={!!selectedProduct}
+  onRequestClose={closeModal}
+  className="relative p-6 mx-auto bg-white border rounded-lg shadow-lg top-6"
+  style={{
+    content: {
+      maxWidth: "600px",  
+      width: "90%",      
+      maxHeight: "90vh",
+      overflowY: "auto",  
+      margin: "auto",     
+    },
+  }}
+  overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+>
+  {selectedProduct && (
+    <div className="flex w-full p-4 bg-white rounded-lg shadow-lg">
+      {/* Image on the left */}
+      <div className="w-1/3">
+        <img
+          src={selectedProduct.image}
+          alt={selectedProduct.brand}
+          className="object-cover w-full h-40 rounded-md"
+        />
+      </div>
+
+      {/* Product details on the right */}
+      <div className="w-2/3 pl-4">
+        <h2 className="mt-2 text-xl font-bold">{selectedProduct.brand}</h2>
+        <p>Category: {selectedProduct.category}</p>
+        <p>Stock: {selectedProduct.stock}</p>
+        <p>Size: {selectedProduct.size}</p>
+        <p className="text-lg font-semibold">Price: Rp {selectedProduct.price}.00</p>
+        <p className="text-sm text-gray-500">Offer: {selectedProduct.offer}</p>
+
+        {/* Add to Cart Button */}
+        <div className="flex gap-2 mt-4">
+          <button
+            className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-600"
+            onClick={() => {
+              addCart(selectedProduct);
+            }}
+          >
+            Add to Cart
+          </button>
+
+          <button
+            className="px-4 py-2 font-bold text-gray-700 bg-gray-300 rounded hover:bg-gray-400"
+            onClick={closeModal}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   )}
 </Modal>
-
 
 
 
@@ -137,6 +149,7 @@ function HomePage() {
 }
 
 export default HomePage;
+
 
 
 

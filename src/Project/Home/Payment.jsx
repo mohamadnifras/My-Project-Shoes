@@ -5,10 +5,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
-
 Modal.setAppElement("#root");
 
-function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
+function Payment({ isOpen, onRequestClose, total, cart, setCart }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -50,15 +49,13 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
       await axios.put(`http://localhost:5000/users/${id}`, {
         ...user,
         orders: updatedOrders,
-        cart:[],
+        cart: [],
       });
 
       toast.success("Payment successful and order saved!");
-      setCart([])
+      setCart([]);
       onRequestClose();
-      navigate("/orderlist")
-
-   
+      navigate("/orderlist");
     } catch (error) {
       toast.error("Payment failed. Please try again.");
       console.error("Error:", error);
@@ -70,18 +67,20 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
       <Modal
         isOpen={isOpen}
         onRequestClose={onRequestClose}
-        className=" mx-auto p-6 border rounded-lg shadow-lg bg-white"
+        className="p-6 mx-auto bg-white border rounded-lg shadow-lg"
         style={{
           content: {
-            width: "600px",
-            height: "auto",
-            // maxHeight: "80vh",
-            overflowY: "auto",
+            width: "90%", // Responsive width (90% of the screen)
+            maxWidth: "600px", // Maximum width
+            height: "auto", // Height adjusts to content
+            maxHeight: "80vh", // Maximum height (80% of viewport height)
+            overflowY: "auto", // Allow scrolling if content exceeds maxHeight
+            margin: "auto", // Center the modal horizontally
           },
         }}
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
       >
-        <h2 className="text-xl font-bold mb-4">Payment Confirmation</h2>
+        <h2 className="mb-4 text-xl font-bold">Payment Confirmation</h2>
         <div className="mb-4">
           <label className="block mb-2 font-bold">Name:</label>
           <input
@@ -89,7 +88,7 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 border rounded mb-4"
+            className="w-full p-2 mb-4 border rounded"
             placeholder="Enter your name"
           />
 
@@ -98,7 +97,7 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
             name="address"
             value={formData.address}
             onChange={handleChange}
-            className="w-full p-2 border rounded mb-4"
+            className="w-full p-2 mb-4 border rounded"
             placeholder="Enter your address"
           />
 
@@ -108,7 +107,7 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border rounded mb-4"
+            className="w-full p-2 mb-4 border rounded"
             placeholder="Enter your email"
           />
 
@@ -118,17 +117,17 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full p-2 border rounded mb-4"
+            className="w-full p-2 mb-4 border rounded"
             placeholder="000 000 0000"
           />
         </div>
 
         <div className="mb-4">
-          <h3 className="font-bold mb-2">Order Summary:</h3>
+          <h3 className="mb-2 font-bold">Order Summary:</h3>
           {cart.map((item, index) => (
             <div key={index} className="flex justify-between py-1">
               <span>{item.name}</span>
-              <span>{item.price.toFixed(2)}</span>
+              <span>${item.price.toFixed(2)}</span>
             </div>
           ))}
         </div>
@@ -139,13 +138,13 @@ function Payment({ isOpen, onRequestClose, total, cart, setCart}) {
 
         <div className="flex justify-between mt-2">
           <button
-            className="py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600"
+            className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600"
             onClick={handlePayment}
           >
             Confirm Payment
           </button>
           <button
-            className="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
+            className="px-4 py-2 text-white bg-gray-500 rounded hover:bg-gray-600"
             onClick={onRequestClose}
           >
             Cancel

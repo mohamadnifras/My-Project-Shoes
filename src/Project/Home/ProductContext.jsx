@@ -97,7 +97,7 @@ useEffect(() => {
     }
   }
     fecthOrders();
-  },[user])
+  },[orders])
 
 
 
