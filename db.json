@@ -52,7 +52,20 @@
       "email": "hisham@gmail.com",
       "password": "121212",
       "status": true,
-      "cart": [],
+      "cart": [
+        {
+          "id": "3",
+          "name": "casua Shoe",
+          "category": "men",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/5/f/s/-original-imah46kbesfekgu6.jpeg?q=70",
+          "brand": "Nike",
+          "price": 2999,
+          "offer": "25%",
+          "size": 11,
+          "stock": 75,
+          "quantity": 1
+        }
+      ],
       "orders": [
         {
           "name": "hisham",
@@ -84,7 +97,7 @@
       "lastname": "up",
       "email": "sinan@gmail.com",
       "password": "12345678",
-      "status": false,
+      "status": true,
       "cart": [],
       "orders": []
     },

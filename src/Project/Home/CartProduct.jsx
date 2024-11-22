@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { productContext } from "./ProductContext";
 import Payment from "./Payment";
+import { useNavigate } from "react-router-dom";
 
 function CartProduct() {
   const { cart, removeCart, setCart } = useContext(productContext);
   const [paymentOpen, setPaymentOpen] = useState(false);
-
+const navigate  = useNavigate()
   const subTotal = cart.reduce(
     (acc, item) => acc + Number(item.price) * item.quantity,
     0
@@ -36,11 +37,24 @@ function CartProduct() {
 
   return (
     <div>
+      
+     
+      
       {cart.length === 0 ? (
-        <h1 className="mt-6 font-bold text-center text-gray-700">
-          Cart is Empty 🛒
-        </h1>
+       <div className="flex items-center justify-between mb-4">
+       <h1 className="mt-6 font-bold text-gray-700">
+         Cart is Empty 🛒
+       </h1>
+       <button 
+         className="px-4 py-2 text-white transition bg-red-500 rounded hover:bg-red-700"
+         onClick={() => navigate('/')}
+       >
+         Show Product
+       </button>
+     </div>
+     
       ) : (
+
         <div className="p-4 overflow-x-auto">
           <table className="min-w-full border border-collapse border-gray-300 table-auto">
             <thead>

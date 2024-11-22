@@ -37,7 +37,7 @@ const handleSave = (updatedProduct) => {
   return (
     <>
       <div className="flex justify-between p-4">
-        <select className="border-2 border-black rounded p-1" onChange={handleCategoryChange}>
+        <select className="p-1 border-2 border-black rounded" onChange={handleCategoryChange}>
           <option value="">All</option>
           <option value="men">Men</option>
           <option value="women">Women</option>
@@ -48,30 +48,30 @@ const handleSave = (updatedProduct) => {
         isOpen={newAdd}
         onRequestClose={()=>setNewAdd(false)}/>
       </div>
-      <div className="overflow-x-auto w-full flex justify-center">
-        <div className="max-w-5xl w-full">
+      <div className="flex justify-center w-full overflow-x-auto">
+        <div className="w-full max-w-5xl">
           <table className="min-w-full bg-white border border-gray-300">
             <thead>
               <tr className="bg-gray-100 border-b border-gray-300">
-                <th className="text-left p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-left text-gray-700">
                   PRODUCT NAME
                 </th>
-                <th className="text-left p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-left text-gray-700">
                   BRAND
                 </th>
-                <th className="text-left p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-left text-gray-700">
                   STOCKS
                 </th>
-                <th className="text-left p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-left text-gray-700">
                   PRICE
                 </th>
-                <th className="text-left p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-left text-gray-700">
                   CATEGORY
                 </th>
-                <th className="text-left p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-left text-gray-700">
                   IMAGES
                 </th>
-                <th className="text-center p-4 font-semibold text-gray-700">
+                <th className="p-4 font-semibold text-center text-gray-700">
                   EDIT/DELETE
                 </th>
               </tr>
@@ -91,14 +91,14 @@ const handleSave = (updatedProduct) => {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="h-16 w-16 object-cover rounded"
+                      className="object-cover w-16 h-16 rounded"
                     />
                   </td>
-                  <td className="p-4 text-center space-x-2">
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onClick={()=>openEdit(item)}>
+                  <td className="p-4 space-x-2 text-center">
+                    <button className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600" onClick={()=>openEdit(item)}>
                       Edit
                     </button>
-                    <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" onClick={()=> deleteProduct(item.id)}>
+                    <button className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600" onClick={()=> deleteProduct(item.id)}>
                       Delete
                     </button>
                   </td>
@@ -114,3 +114,8 @@ const handleSave = (updatedProduct) => {
 }
 
 export default AdminProduct;
+
+
+
+
+
