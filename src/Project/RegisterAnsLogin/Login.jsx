@@ -28,6 +28,7 @@ function Login() {
               localStorage.setItem("name", "Admin Nifras");
               localStorage.setItem("email", adminEmail);
               localStorage.setItem("password",  adminPassword );
+              localStorage.setItem("role",  "admin" );
               navigate("/admin");
               return;
             } 

@@ -14,7 +14,7 @@ function AdminDashboard() {
   ).length;
   const totalProductPrice = adminProduct.reduce((total, product) => {
     const price =
-      typeof product.price === "number"
+      typeof product.price === "number" 
         ? product.price
         : parseFloat(product.price) || 0;
     return total + price;

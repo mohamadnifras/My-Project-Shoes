@@ -77,13 +77,82 @@
       "status": false,
       "cart": [],
       "orders": []
+    },
+    {
+      "id": "005b",
+      "firstname": "minhaj",
+      "lastname": "k",
+      "email": "minhaj@gmail.com",
+      "password": "12345678",
+      "status": true,
+      "cart": [],
+      "orders": [
+        {
+          "name": "minhaj",
+          "address": "123kudoor h thalapra ",
+          "email": "minhaj@gmail.com",
+          "phone": "9496870816",
+          "cartItems": [
+            {
+              "id": "2",
+              "name": "casua Shoe",
+              "category": "men",
+              "image": "https://www.superkicks.in/cdn/shop/files/6_850343c4-985f-4377-a4cb-fedb7ba8b703.jpg?v=1725345832&width=600",
+              "brand": "Adidas",
+              "price": 2499,
+              "offer": "20%",
+              "size": 10,
+              "stock": "40",
+              "quantity": 1
+            }
+          ],
+          "total": 2623.95,
+          "date": "11/8/2024, 10:19:03 AM"
+        }
+      ]
+    },
+    {
+      "id": "769f",
+      "firstname": "shameem",
+      "lastname": "vp",
+      "email": "shameem@gmail.com",
+      "password": "12345678",
+      "status": true,
+      "cart": [
+        {
+          "id": "1",
+          "name": "casua Shoes",
+          "category": "men",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/p/i/-original-imah4sxtbwfftpfd.jpeg?q=70",
+          "brand": "Nike",
+          "price": "1999",
+          "offer": "30%",
+          "size": 9,
+          "stock": "40",
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "casua Shoe",
+          "category": "men",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/w/l/u/-original-imah4zhtzcnzf3dv.jpeg?q=70",
+          "brand": "Nike",
+          "price": 2300,
+          "offer": "20%",
+          "size": 9,
+          "stock": 90,
+          "quantity": 1
+        }
+      ],
+      "orders": []
     }
   ],
-  "admin":[
+  "admin": [
     {
-      "id":"ni7",
-      "email":"adminnifras@gmail.com",
-      "password":"77770000"
+      "id": "ni7",
+      "email": "adminnifras@gmail.com",
+      "password": "77770000",
+      "role": "admin"
     }
   ],
   "products": [
@@ -306,17 +375,6 @@
       "offer": "40%",
       "size": 9,
       "stock": 35
-    },
-    {
-      "id": "21",
-      "name": "sneaker Shoe",
-      "category": "women",
-      "image": "/shoeimages/women1.jpg",
-      "brand": "Nike",
-      "price": 2999,
-      "offer": "30%",
-      "size": 8,
-      "stock": 50
     },
     {
       "id": "22",

@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import { productContext } from './ProductContext';
 import LastPage from './LastPage';
 import Modal from "react-modal";
+import HeroSection from './HeroSection';
 
 
 
@@ -24,17 +25,14 @@ function HomePage() {
   return (
     <div className='bg-gray-100 '>
       <Navbar />
-      <div className=''>
-        <img src="./shoeimages/homepage3.png" alt="" style={{ height: "630px", width:"100%" }} />
-      </div>
-
+    
       
       <div className="flex flex-wrap justify-center gap-4 p-4 w-100%"> 
         {filteredProduct.map((item) => (
-          <div key={item.id} className="card inline-block transition-transform duration-300 transform hover:scale-105 hover:shadow-lg "> 
-            <img src={item.image} alt="shoes" className="w-full h-48 object-cover"  onClick={() => handleImageClick(item)}/>
+          <div key={item.id} className="inline-block transition-transform duration-300 transform card hover:scale-105 hover:shadow-lg "> 
+            <img src={item.image} alt="shoes" className="object-cover w-full h-48"  onClick={() => handleImageClick(item)}/>
             
-            <div className="p-5 flex flex-col gap-3"> 
+            <div className="flex flex-col gap-3 p-5"> 
               {/* badge */}
               <div className="flex items-center gap-2">
                 <span className="badge">Stock: {item.stock}</span>
@@ -55,7 +53,7 @@ function HomePage() {
               </div>
 
               {/* product action button */}
-              <div className="mt-5 flex gap-2">
+              <div className="flex gap-2 mt-5">
                 <button className="button-primary" onClick={()=>addCart(item)}>Add to cart</button>
               </div>
             </div>
@@ -63,7 +61,7 @@ function HomePage() {
         ))}
       </div>
 {/* image click */}
-      <Modal isOpen={!!selectedProduct} onRequestClose={closeModal} className=" mx-auto p-6 border rounded-lg shadow-lg bg-white"
+      <Modal isOpen={!!selectedProduct} onRequestClose={closeModal} className="p-6 mx-auto bg-white border rounded-lg shadow-lg "
         style={{
           content: {
             width: "400px",
@@ -74,13 +72,13 @@ function HomePage() {
         }}
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
   {selectedProduct && (
-    <div className="modal-content bg-white p-4 rounded-lg shadow-lg max-w-xs w-full mx-auto">
+    <div className="w-full max-w-xs p-4 mx-auto bg-white rounded-lg shadow-lg modal-content">
       <img
         src={selectedProduct.image}
         alt={selectedProduct.brand}
-        className="w-full h-32 object-cover rounded-md"
+        className="object-cover w-full h-32 rounded-md"
       />
-      <h2 className="text-xl font-bold mt-2">{selectedProduct.brand}</h2>
+      <h2 className="mt-2 text-xl font-bold">{selectedProduct.brand}</h2>
       <p>Category: {selectedProduct.category}</p>
       <p>Stock: {selectedProduct.stock}</p>
       <p>Size: {selectedProduct.size}</p>
@@ -88,9 +86,9 @@ function HomePage() {
       <p className="text-sm text-gray-500">Offer: {selectedProduct.offer}</p>
       
       {/* Add to Cart Button */}
-      <div className="mt-4 flex gap-2">
+      <div className="flex gap-2 mt-4">
   <button
-    className="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600"
+    className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-600"
     onClick={() => {
       addCart(selectedProduct);
     }}
@@ -99,7 +97,7 @@ function HomePage() {
   </button>
 
   <button
-    className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded hover:bg-gray-400"
+    className="px-4 py-2 font-bold text-gray-700 bg-gray-300 rounded hover:bg-gray-400"
     onClick={closeModal}
   >
     Cancel
@@ -119,3 +117,6 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
+
