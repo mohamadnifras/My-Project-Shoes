@@ -62,7 +62,19 @@
           "price": 2499,
           "offer": "20%",
           "size": 10,
-          "stock": 50,
+          "stock": "40",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "casua Shoes",
+          "category": "men",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/p/i/-original-imah4sxtbwfftpfd.jpeg?q=70",
+          "brand": "Nike",
+          "price": "1999",
+          "offer": "30%",
+          "size": 9,
+          "stock": "40",
           "quantity": 1
         }
       ],

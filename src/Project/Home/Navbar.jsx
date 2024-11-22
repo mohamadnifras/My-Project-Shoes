@@ -39,12 +39,12 @@ function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
 
       <div className="flex items-center justify-between bg-[#0f172a] p-4 lg:px-8 h-14">
         {/* Logo */}
       
-       <a href="/" className="flex items-center">
+       <a href="/" className="relative right-7">
           <span className="text-lg font-bold text-gray-500 lg:text-xl">
             TEACH
           </span>
@@ -88,7 +88,7 @@ function Navbar() {
             type="text"
             placeholder="Search for Products, Brands"
             onChange={handleSearchChange}
-            className="w-full h-10 px-4 pl-12 transition duration-200 ease-in-out bg-gray-200 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-500"
+            className="w-full h-8 px-4 pl-12 transition duration-200 ease-in-out bg-gray-200 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-500"
           />
           <FontAwesomeIcon
             icon={faSearch}
