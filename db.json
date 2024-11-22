@@ -212,17 +212,6 @@
       "stock": 90
     },
     {
-      "id": "6",
-      "name": "High-Top Shoes",
-      "category": "men",
-      "image": "https://www.superkicks.in/cdn/shop/files/4_293c91cd-1509-463f-9bb8-0e0610872190.jpg?v=1720612286&width=600",
-      "brand": "Nike",
-      "price": 4500,
-      "offer": "25%",
-      "size": 11,
-      "stock": 45
-    },
-    {
       "id": "7",
       "name": "sneaker  Shoe",
       "category": "men",
