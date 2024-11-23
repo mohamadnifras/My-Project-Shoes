@@ -52,20 +52,7 @@
       "email": "hisham@gmail.com",
       "password": "121212",
       "status": true,
-      "cart": [
-        {
-          "id": "3",
-          "name": "casua Shoe",
-          "category": "men",
-          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/5/f/s/-original-imah46kbesfekgu6.jpeg?q=70",
-          "brand": "Nike",
-          "price": 2999,
-          "offer": "25%",
-          "size": 11,
-          "stock": 75,
-          "quantity": 1
-        }
-      ],
+      "cart": [],
       "orders": [
         {
           "name": "hisham",
@@ -88,6 +75,50 @@
           ],
           "total": 2623.95,
           "date": "11/22/2024, 11:35:08 PM"
+        },
+        {
+          "name": "hisham",
+          "address": "123hisham house",
+          "email": "hisham@gmail.com",
+          "phone": "1234567890",
+          "cartItems": [
+            {
+              "id": "3",
+              "name": "casua Shoe",
+              "category": "men",
+              "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/5/f/s/-original-imah46kbesfekgu6.jpeg?q=70",
+              "brand": "Nike",
+              "price": 2999,
+              "offer": "25%",
+              "size": 11,
+              "stock": 75,
+              "quantity": 1
+            }
+          ],
+          "total": 3148.95,
+          "date": "11/23/2024, 10:16:51 AM"
+        },
+        {
+          "name": "hisham",
+          "address": "123asdfdfgh",
+          "email": "hisham@gmail.com",
+          "phone": "1234567890",
+          "cartItems": [
+            {
+              "id": "2",
+              "name": "casua Shoe",
+              "category": "men",
+              "image": "https://www.superkicks.in/cdn/shop/files/6_850343c4-985f-4377-a4cb-fedb7ba8b703.jpg?v=1725345832&width=600",
+              "brand": "Adidas",
+              "price": 2499,
+              "offer": "20%",
+              "size": 10,
+              "stock": "40",
+              "quantity": 1
+            }
+          ],
+          "total": 2623.95,
+          "date": "11/23/2024, 10:50:58 AM"
         }
       ]
     },
@@ -107,7 +138,7 @@
       "lastname": "k",
       "email": "minhaj@gmail.com",
       "password": "12345678",
-      "status": true,
+      "status": false,
       "cart": [],
       "orders": [
         {
@@ -708,15 +739,15 @@
       "stock": 55
     },
     {
-      "id": "baa3",
+      "id": "cd6e",
       "name": "sneakers",
       "category": "men",
       "image": "https://neemans.com/cdn/shop/files/ND-TB-Grey-_WebOptimized_a_eb690643-6131-4b53-86da-c1b5c2b55803_800x.jpg?v=1724988614",
-      "brand": "Neeman's",
-      "price": "3000",
-      "offer": "30%",
-      "size": "9",
-      "stock": "20"
+      "brand": "Nike",
+      "price": "2999",
+      "offer": "20%",
+      "size": "7",
+      "stock": "10"
     }
   ]
 }
